@@ -66,9 +66,9 @@ class Owner
 
   def sell_pets
     # binding.pry
-    # if @pets.clear
+    @pets.clear
     @pets.each do |animal, pet_array|
-      pet_array.each do |pet| 
+      pet_array.each do |pet|
         pet.mood = "happy"
       end
     end
