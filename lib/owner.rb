@@ -68,7 +68,7 @@ class Owner
     # binding.pry
     @pets.each do |animal, pet_array|
       pet_array.each do |pet|
-        pet.mood = "happy"
+        pet.mood = "nervous"
       end
       @pets.clear
     end
