@@ -66,11 +66,11 @@ class Owner
 
   def sell_pets
     # binding.pry
-    @pets.clear
     @pets.each do |animal, pet_array|
       pet_array.each do |pet|
         pet.mood = "happy"
       end
+      @pets.clear
     end
 
   end
