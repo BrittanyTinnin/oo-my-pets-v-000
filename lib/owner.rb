@@ -1,5 +1,7 @@
+require 'pry'
+
 class Owner
-  attr_accessor :name, :pets
+  attr_accessor :name, :pets, :mood
   attr_reader :species
 
   @@all = []
@@ -28,6 +30,48 @@ class Owner
   end
 
   def buy_fish(name)
-    @pets[:fishes] << Fish.new(name) #i think i need a method to call pet hash to add items to it
+    @pets[:fishes] << Fish.new(name)
   end
+
+  def buy_cat(name)
+    @pets[:cats] << Cat.new(name)
+  end
+
+  def buy_dog(name)
+    @pets[:dogs] << Dog.new(name)
+  end
+
+  def walk_dogs
+    # binding.pry
+    pet = @pets[:dogs]
+    pet.select{|dog| dog.mood = "happy"}
+    pet
+  end
+
+  def play_with_cats
+    pet = @pets[:cats]
+    pet.select{|cat| cat.mood = "happy"}
+    pet
+  end
+
+  def feed_fish
+    pet = @pets[:fishes]
+    pet.select{|fish| fish.mood = "happy"}
+    pet
+  end
+
+  def list_pets
+    fish = @pets[:fishes].count
+    dog = @pets[:dogs].count
+    cat = @pets[:cats].count
+    "I have #{fish} fish, #{dog} dog(s), and #{cat} cat(s)."
+  end
+
+  def sell_pets
+    binding.pry
+    # if @pets.clear
+
+  end
+
+
 end
